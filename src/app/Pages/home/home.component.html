@@ -1,0 +1,138 @@
+<app-navbar></app-navbar>
+<section class="max-w-[2200px] mx-auto px-3 sm:px-4 md:px-6">
+  <section class="w-full h-[80vh] relative">
+    <div
+      class="w-full h-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-10"
+    >
+      <owl-carousel-o [options]="customTextOptions">
+        <ng-container *ngFor="let item of textSlidesStore; trackBy: trackById">
+          <ng-template carouselSlide>
+            <div
+              class="w-full h-[80vh] flex justify-center flex-col items-start ml-10"
+            >
+              <div
+                class="text-teal-800 bg-gray-200 bg-opacity-50 max-w-[800px]"
+              >
+                <h1 class="lg:text-[45px] alfa-slab px-2">
+                  {{ item.header }}
+                </h1>
+                <p
+                  class="poppins-500 text-sm md:text-base lg:text-lg xl:text-xl px-2 pt-3"
+                >
+                  {{ item.description }}
+                </p>
+              </div>
+              <button
+                class="text-white px-3 py-2 mt-2 poppins-500 bg-teal-700 lg:text-xl rounded-md"
+              >
+                Shop Now !
+              </button>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let item of slidesStore; trackBy: trackById">
+        <ng-template carouselSlide>
+          <img [src]="item.src" [alt]="item.alt" class="h-[80vh]" />
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </section>
+
+  <section class="w-full mt-10 flex justify-center items-start gap-3 pb-12">
+    <div class="w-[65%] flex flex-col gap-3">
+      <div
+        class="w-full h-[500px] bg-contain bg-slate-100 bg-no-repeat bg-center bg-[url('/assets/images/bag.png')]"
+      ></div>
+      <div
+        class="w-full h-[500px] bg-contain bg-slate-100 bg-no-repeat bg-center bg-[url('/assets/images/cap.png')]"
+      ></div>
+    </div>
+    <div class="w-[35%] flex flex-col gap-3">
+      <div
+        class="w-full h-[330px] bg-contain bg-slate-100 bg-no-repeat bg-center bg-[url('/assets/images/hoodie.png')]"
+      ></div>
+      <div
+        class="w-full h-[330px] bg-contain bg-slate-100 bg-no-repeat bg-center bg-[url('/assets/images/tShirtWomen.png')]"
+      ></div>
+      <div
+        class="w-full h-[330px] bg-contain bg-slate-100 bg-no-repeat bg-center bg-[url('/assets/images/wallet.png')]"
+      ></div>
+    </div>
+  </section>
+
+  <section
+    class="w-full mt-10 flex items-start justify-start flex-col gap-3 pb-12"
+  >
+    <h1 class="md:text-2xl lg:text-3xl xl:text-4xl poppins-700">
+      Featured Products
+    </h1>
+
+    <div class="w-full flex justify-between items-center gap-3 flex-wrap">
+      <div
+        *ngFor="let item of imagesData"
+        class="flex-grow basis-[250px] sm:basis-[300px] md:basis-[400px] lg:basis-[500px] xl:basis-[600px] bg-slate-100 h-[300px] sm:h-[350px] md:h-[450px] lg:[550px] xl:h-[650px] bg-contain bg-no-repeat bg-center"
+        [style.backgroundImage]="'url(assets/images/' + item + ')'"
+      ></div>
+    </div>
+    <div class="my-4 w-full flex justify-center items-center">
+      <button
+        class="text-white px-3 py-2 mt-2 poppins-500 bg-teal-700 lg:text-xl rounded-md"
+      >
+        View All Products
+      </button>
+    </div>
+  </section>
+
+  <section class="w-full mt-7 flex justify-start flex-col items-start gap-4">
+    <div class="w-full">
+      <h4 class="text-center text-sm sm:text-base md:text-lg xl:text-xl">
+        Find the perfect blend of fashion and function with our collection of
+        shirts, caps, wallets, and shoes. Redefine your everyday look!
+      </h4>
+    </div>
+    <div class="w-full flex justify-center items-center">
+      <div class="mt-3 pb-3 w-1/2">
+        <div
+          class="lg:w-[400px] lg:h-[450px] xl:w-[500px] xl:h-[550px] relative"
+        >
+          <img
+            src="assets/images/collapse1.jpg"
+            alt="hoodie"
+            class="w-full h-full"
+          />
+          <img
+            src="assets/images/collapse2.jpg"
+            alt="hoodie"
+            class="lg:w-[400px] lg:h-[450px] xl:w-[450px] xl:h-[500px] absolute top-[50%] left-[120%] translate-x-[-50%] translate-y-[-50%]"
+          />
+        </div>
+      </div>
+
+      <div class="max-w-[700px] py-3 flex justify-center items-start flex-col">
+        <h1 class="poppins-700 text-4xl mb-5">
+          The Perfect Mix of Style and Comfort
+        </h1>
+        <p class="text-xl">
+          Discover a collection that brings together the best of style and
+          utility. Our shirts, caps, wallets, and shoes are designed to elevate
+          your wardrobe, no matter the occasion. From effortless casual looks to
+          sophisticated outfits, you’ll find everything you need to make a
+          lasting impression. Each piece is carefully crafted with attention to
+          detail, ensuring you not only look good but feel great too. Revamp
+          your daily style with pieces that offer versatility, durability, and
+          flair.
+        </p>
+
+        <button
+          class="text-white px-3 py-2 poppins-500 bg-teal-700 lg:text-xl rounded-md mt-7"
+        >
+          Shop Now !
+        </button>
+      </div>
+    </div>
+  </section>
+</section>
+<app-footer></app-footer>
