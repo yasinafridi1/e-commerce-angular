@@ -9,8 +9,8 @@ import { ButtonPrimaryComponent } from '../../Components/button-primary/button-p
   imports: [
     NavbarComponent,
     FooterComponent,
-    AlphaSlabComponent,
     ButtonPrimaryComponent,
+    AlphaSlabComponent,
   ],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
