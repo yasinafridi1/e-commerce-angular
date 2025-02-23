@@ -13,9 +13,9 @@
       <li class="relative text-center">
         <a routerLink="/cart" class="text-3xl cursor-pointer">
           <i class="bi bi-cart4"></i>
-          <div *ngIf="cartItems.length > 0"
+          <div *ngIf="cartItems > 0"
             class="absolute inline-flex items-center justify-center min-w-5 min-h-5 p-[3px] text-xs font-bold text-red-800 bg-red-200 rounded-full -top-2 -end-3">
-            20
+            {{cartItems}}
           </div>
         </a>
       </li>

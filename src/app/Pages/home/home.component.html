@@ -70,9 +70,34 @@
     </h1>
 
     <div class="w-full flex justify-between items-center gap-3 flex-wrap">
-      <div *ngFor="let item of imagesData"
-        class="flex-grow basis-[250px] sm:basis-[300px] md:basis-[400px] lg:basis-[500px] xl:basis-[600px] bg-lightGray h-[300px] sm:h-[350px] md:h-[450px] lg:[550px] xl:h-[650px] bg-contain bg-no-repeat bg-center"
-        [style.backgroundImage]="'url(assets/images/' + item + ')'"></div>
+      <div *ngFor="let item of featuredProducts"
+        class="overflow-hidden relative group flex-grow basis-[250px] sm:basis-[300px] md:basis-[400px] lg:basis-[500px] xl:basis-[600px] bg-lightGray h-[300px] sm:h-[350px] md:h-[450px] lg:h-[550px] xl:h-[650px] bg-contain bg-no-repeat bg-center"
+        [style.backgroundImage]="'url(' + item.image + ')'">
+
+        <!-- Overlay (Initially hidden, slides up on hover) -->
+        <div
+          class="absolute rounded-t-md bottom-0 left-0 w-full h-0 bg-black bg-opacity-70 opacity-0 group-hover:h-1/2 group-hover:opacity-100 transition-all duration-500 text-white px-5 py-3">
+
+          <div>
+            <h1 class="text-2xl poppins-600">{{item.name}}</h1>
+            <h1 class="text-2xl poppins-600 my-3">$ {{item.price}}</h1>
+            <p class="text-xs sm:text-sm md:text-base xl:text-lg">{{item.description}}</p>
+          </div>
+
+          <div class="mt-3 flex gap-2">
+            <button (click)="addToCart(item)"
+              class="px-4 py-2 bg-green-500 hover:bg-green-700 rounded text-white text-base md:text-lg lg:text-xl poppins-500  transition-all duration-300 ease-in-out">
+              Add to Cart
+            </button>
+            <button
+              class="px-4 py-2 bg-blue-500 hover:bg-blue-700 rounded text-white text-base md:text-lg lg:text-xl poppins-500  transition-all duration-300 ease-in-out">
+              View Details
+            </button>
+          </div>
+        </div>
+      </div>
+
+
     </div>
     <div class="my-4 w-full flex justify-center items-center">
       <app-button-primary btnText="View All Products"></app-button-primary>

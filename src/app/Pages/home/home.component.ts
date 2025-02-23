@@ -5,6 +5,9 @@ import { NgFor } from '@angular/common';
 import { FooterComponent } from '../../Components/footer/footer.component';
 import { ButtonPrimaryComponent } from '../../Components/button-primary/button-primary.component';
 import { AlphaSlabComponent } from '../../Components/typograpghy/alpha-slab/alpha-slab.component';
+import { ProductItem } from '@assets/models';
+import { products } from '@assets/data';
+import { CartService } from 'app/services/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +24,7 @@ import { AlphaSlabComponent } from '../../Components/typograpghy/alpha-slab/alph
   styleUrl: './home.component.scss',
 })
 export class HomeComponent {
+  featuredProducts: ProductItem[] = products;
   slidesStore = [
     { id: 1, src: 'assets/images/1.jpg', alt: 'Slide 1' },
     { id: 2, src: 'assets/images/2.jpg', alt: 'Slide 2' },
@@ -80,17 +84,12 @@ export class HomeComponent {
     navText: [],
   };
 
-  imagesData = [
-    'leather.png',
-    'hoodie.png',
-    'tShirtWomen.png',
-    'wallet.png',
-    'sandals.png',
-    'shoes.png',
-    'longCoat.png',
-  ];
-
+  constructor(private _cartServices: CartService) {}
   trackById(index: number, item: any): string | number {
     return item.id; // Use the unique 'id' property of the item
+  }
+
+  addToCart(product: ProductItem): void {
+    this._cartServices.addToCart(product);
   }
 }
