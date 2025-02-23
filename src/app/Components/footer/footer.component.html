@@ -1,9 +1,25 @@
-<section id="footer" class="w-full bg-gray-900 py-5">
-  <div class="w-full flex justify-center items-center">
-    <div class="w-1/2">
-      <h1>
-        Vibe Vault
-      </h1>
+<section id="footer" class="w-full bg-slate-100 py-5">
+  <div class="w-full flex justify-evenly items-stretch px-5 pt-10">
+    <div class="max-w-[400px] md:max-w-[450px] lg:max-w-[500px]">
+      <div
+        class="w-[25px] h-[22px] sm:w-[40px] sm:h-[35px] md:w-[50px] md:h-[40px] xl:w-[70px] xl:h-[60px] 2xl:w-[80px] 2xl:h-[70px]">
+        <img class="w-full h-full" src="/assets/images/logo.png" alt="logo">
+      </div>
+      <p class="text-xs sm:text-sm 2xl:text-base mt-4">
+        Where every little moment is wrapped in comfort and style.
+        Clothing that moves with them through every milestone.
+        Soft, breathable fabrics designed for play and adventure.
+        From cozy beginnings to bold steps, we’ve got them covered.
+        Creating memories with every outfit, one tiny stitch at a time.
+      </p>
     </div>
+
+    <app-footer-column header="Support" [subHeaders]="supportLinks">
+
+    </app-footer-column>
+
+    <app-footer-column header="Policies" [subHeaders]="policyLinks">
+
+    </app-footer-column>
   </div>
 </section>

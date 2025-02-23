@@ -1,12 +1,21 @@
-import { Component } from '@angular/core'
-import { NavbarComponent } from '../../Components/navbar/navbar.component'
-import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o'
-import { NgFor } from '@angular/common'
-import { FooterComponent } from '../../Components/footer/footer.component'
+import { Component } from '@angular/core';
+import { NavbarComponent } from '../../Components/navbar/navbar.component';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { NgFor } from '@angular/common';
+import { FooterComponent } from '../../Components/footer/footer.component';
+import { ButtonPrimaryComponent } from '../../Components/button-primary/button-primary.component';
+import { AlphaSlabComponent } from '../../Components/typograpghy/alpha-slab/alpha-slab.component';
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, CarouselModule, NgFor, FooterComponent],
+  imports: [
+    NavbarComponent,
+    CarouselModule,
+    NgFor,
+    FooterComponent,
+    ButtonPrimaryComponent,
+    AlphaSlabComponent,
+  ],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -16,7 +25,7 @@ export class HomeComponent {
     { id: 1, src: 'assets/images/1.jpg', alt: 'Slide 1' },
     { id: 2, src: 'assets/images/2.jpg', alt: 'Slide 2' },
     { id: 3, src: 'assets/images/3.jpg', alt: 'Slide 3' },
-  ]
+  ];
 
   textSlidesStore = [
     {
@@ -37,23 +46,23 @@ export class HomeComponent {
       description:
         'From trendy shirts to versatile shoes, discover timeless pieces that bring both comfort and style to your closet.',
     },
-  ]
+  ];
 
   customTextOptions: OwlOptions = {
     autoplay: true,
     autoplayTimeout: 5000,
-    autoplayHoverPause: true,
+    autoplayHoverPause: false,
     items: 1,
     loop: true,
     mouseDrag: false,
     touchDrag: false,
     pullDrag: false,
-    animateIn: 'animate__slideInDown',
-    animateOut: 'animate__slideOutLeft',
+    animateIn: 'animate__fadeIn',
+    animateOut: 'animate__fadeOut',
     dots: false,
-    navSpeed: 300, // Adjusted for smoother navigation
+    navSpeed: 1000, // Adjusted for smoother navigation
     navText: ['<', '>'],
-  }
+  };
 
   customOptions: OwlOptions = {
     autoplay: true,
@@ -64,12 +73,12 @@ export class HomeComponent {
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    animateIn: 'animate__fadeInLeft',
-    animateOut: 'animate__fadeOut',
+    animateIn: 'animate__slideInLeft',
+    animateOut: 'animate__lightSpeedOutRight',
     dots: false,
-    navSpeed: 5000,
-    navText: ['Hello', 'World'],
-  }
+    navSpeed: 1000,
+    navText: [],
+  };
 
   imagesData = [
     'leather.png',
@@ -79,9 +88,9 @@ export class HomeComponent {
     'sandals.png',
     'shoes.png',
     'longCoat.png',
-  ]
+  ];
 
   trackById(index: number, item: any): string | number {
-    return item.id // Use the unique 'id' property of the item
+    return item.id; // Use the unique 'id' property of the item
   }
 }

@@ -1,0 +1,8 @@
+<div class="flex justify-start items-start flex-col">
+    <h1 class="poppins-800 text-lg md:text-xl xl:text-2xl 2xl::text-3xl ">{{ header }}</h1>
+    <div class="mt-4 flex justify-start items-start flex-col gap-y-3">
+        <a *ngFor="let sub of subHeaders" [href]="sub.url"
+            class="text-gray-600 poppins-500 text-sm md:text-base 2xl:text-lg">{{
+            sub.label }}</a>
+    </div>
+</div>

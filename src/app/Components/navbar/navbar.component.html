@@ -1,30 +1,20 @@
-<nav
-  class="py-1 w-full h-[10vh] border-b border-gray-600 sticky top-0 z-50 left-0 bg-white"
->
+<nav class="py-1 w-full h-[10vh] border-b border-gray-600 sticky top-0 z-50 left-0 bg-white">
   <div class="flex justify-center gap-20 h-full items-center md:px-8 xl:px-10">
     <ul class="flex">
-      <app-nav-items
-        *ngFor="let item of navItems"
-        [url]="item.url"
-        [text]="item.text"
-      ></app-nav-items>
+      <app-nav-items *ngFor="let item of navItems" [url]="item.url" [text]="item.text"></app-nav-items>
     </ul>
 
-    <h1
-      class="px-2 text-[25px] sm:text-[40px] md:text-[50px] xl:text-[70px] uppercase"
-    >
-      Vibe Vault
+    <h1 class="px-2 text-[25px] sm:text-[40px] md:text-[50px] xl:text-[70px] uppercase poppins-700">
+      Sh<span class="text-primary">o</span>ppy <span class="text-primary">X</span>
     </h1>
 
     <ul class="flex items-center gap-4">
       <app-nav-items text="Signin" url="/auth/signin"></app-nav-items>
       <li class="relative text-center">
-        <a href="/cart" class="text-3xl">
+        <a routerLink="/cart" class="text-3xl cursor-pointer">
           <i class="bi bi-cart4"></i>
-          <div
-            *ngIf="cartItems.length > 0"
-            class="absolute inline-flex items-center justify-center min-w-5 min-h-5 p-[3px] text-xs font-bold text-red-800 bg-red-200 rounded-full -top-2 -end-3"
-          >
+          <div *ngIf="cartItems.length > 0"
+            class="absolute inline-flex items-center justify-center min-w-5 min-h-5 p-[3px] text-xs font-bold text-red-800 bg-red-200 rounded-full -top-2 -end-3">
             20
           </div>
         </a>

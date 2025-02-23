@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+<section class="w-full py-8 px-8">
+    <div class="mx-auto min-w-[250px] max-w-[500px] mt-5">
+        <img src="/assets/images/empty-cart.svg" alt="">
+    </div>
+    <div class="flex justify-center items-center flex-col mt-6">
+        <app-alpha-slab text="OOPS !"
+            [additionalClasses]="'text-[30px] sm:text-[35px] md:text-[45px] xl:text-[50px] 2xl:text-[60px] text-gray-500'"></app-alpha-slab>
+        <p>Your cart is empty. Please add some products and try again</p>
+        <div class="mt-4">
+            <app-button-primary btnText="Go Back"></app-button-primary>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

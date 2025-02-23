@@ -1,17 +1,81 @@
-import { NavItem } from "@assets/models";
-
+import { NavItem } from '@assets/models';
 
 export const navItems: NavItem[] = [
-    {
-        url: '/home',
-        text: 'Home'
-    },
-    {
-        url: '/about',
-        text: 'About Us'
-    },
-    {
-        url: '/contact',
-        text: 'Contact Us'
-    },
-]
+  {
+    url: '/home',
+    text: 'Home',
+  },
+  {
+    url: '/about',
+    text: 'About Us',
+  },
+  {
+    url: '/contact',
+    text: 'Contact Us',
+  },
+];
+
+export const InAnimations = [
+  'animate__fadeIn',
+  'animate__fadeInDown',
+  'animate__fadeInUp',
+  'animate__fadeInLeft',
+  'animate__fadeInRight',
+  'animate__bounceIn',
+  'animate__bounceInDown',
+  'animate__bounceInUp',
+  'animate__bounceInLeft',
+  'animate__bounceInRight',
+  'animate__zoomIn',
+  'animate__zoomInDown',
+  'animate__zoomInUp',
+  'animate__zoomInLeft',
+  'animate__zoomInRight',
+  'animate__slideInDown',
+  'animate__slideInUp',
+  'animate__slideInLeft',
+  'animate__slideInRight',
+  'animate__lightSpeedInRight',
+  'animate__lightSpeedInLeft',
+  'animate__rotateIn',
+  'animate__rotateInDownLeft',
+  'animate__rotateInDownRight',
+  'animate__rotateInUpLeft',
+  'animate__rotateInUpRight',
+  'animate__flipInX',
+  'animate__flipInY',
+  'animate__jackInTheBox',
+  'animate__rollIn',
+];
+
+export const OutAnimations = [
+  'animate__fadeOut',
+  'animate__fadeOutDown',
+  'animate__fadeOutUp',
+  'animate__fadeOutLeft',
+  'animate__fadeOutRight',
+  'animate__bounceOut',
+  'animate__bounceOutDown',
+  'animate__bounceOutUp',
+  'animate__bounceOutLeft',
+  'animate__bounceOutRight',
+  'animate__zoomOut',
+  'animate__zoomOutDown',
+  'animate__zoomOutUp',
+  'animate__zoomOutLeft',
+  'animate__zoomOutRight',
+  'animate__slideOutDown',
+  'animate__slideOutUp',
+  'animate__slideOutLeft',
+  'animate__slideOutRight',
+  'animate__lightSpeedOutRight',
+  'animate__lightSpeedOutLeft',
+  'animate__rotateOut',
+  'animate__rotateOutDownLeft',
+  'animate__rotateOutDownRight',
+  'animate__rotateOutUpLeft',
+  'animate__rotateOutUpRight',
+  'animate__flipOutX',
+  'animate__flipOutY',
+  'animate__rollOut',
+];
