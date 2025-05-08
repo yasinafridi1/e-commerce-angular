@@ -1,1 +1,23 @@
-<p>product-detail works!</p>
+<app-navbar></app-navbar>
+<section class="py-6">
+    <div
+        class="w-[97%] sm:w-[90%] md:w-[75%] lg:w-[65%] mx-auto px-2 flex-col md:flex-row flex justify-center items-center gap-6">
+        <div
+            class="w-auto h-[200px] md:min-w-[300px] md:min-h-[250px] lg:min-w-[400px] lg:min-h-[300px] xl:min-w-[500px] xl:min-h-[400px] bg-lightGray flex justify-center items-center rounded-md">
+            <img class="w-full h-full" [src]="product?.image" alt="product image">
+        </div>
+
+        <div class=" w-full">
+            <h1 class="mb-4 text-lg sm:textxl md:text-2xl lg:text-3xl xl:text-4xl poppins-600">{{product?.name}}</h1>
+            <p class="mb-4 text-base sm:text-lg lg:text-xl xl:text-2xl poppins-700 ">${{product?.price}}</p>
+            <p class="mb-4 text-xl poppins-500 text-gray-800">Category: {{product?.category}}</p>
+            <p class="mb-4 text-base  text-gray-800">Gender: Male/Female</p>
+            <p class="text-sm lg:text-base text-gray-500 poppins-500"> {{product?.description}}</p>
+            <button (click)="addProduct()"
+                class="text-sm md:text-base xl:text-xl mt-8 py-2 px-4 poppins-600 bg-green-500 hover:bg-green-700 rounded text-white ">Add
+                to
+                Cart</button>
+        </div>
+    </div>
+</section>
+<app-footer></app-footer>

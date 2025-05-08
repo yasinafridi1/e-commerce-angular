@@ -1,15 +1,14 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './Pages/home/home.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import('./Pages/home/home.component').then((c) => c.HomeComponent),
+    component: HomeComponent,
   },
   {
     path: 'home',
-    loadComponent: () =>
-      import('./Pages/home/home.component').then((c) => c.HomeComponent),
+    component: HomeComponent,
   },
   {
     path: 'auth',
@@ -25,5 +24,12 @@ export const routes: Routes = [
     path: 'cart',
     loadComponent: () =>
       import('./Pages/cart/cart.component').then((c) => c.CartComponent),
+  },
+  {
+    path: 'product/:id',
+    loadComponent: () =>
+      import('./Pages/product-detail/product-detail.component').then(
+        (c) => c.ProductDetailComponent
+      ),
   },
 ];

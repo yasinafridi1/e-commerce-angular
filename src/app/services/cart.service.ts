@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CartItem, ProductItem } from '@assets/models';
+import { CartItem, ProductItem } from '@models/index';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LocalstorageService } from './localstorage.service';
 

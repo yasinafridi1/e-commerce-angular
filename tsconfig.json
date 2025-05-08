@@ -20,6 +20,9 @@
     "baseUrl": "./src",  // Base directory for relative paths
     "paths": {
       "@assets/*": ["assets/*"],  // Alias for assets folder
+      "@constants/*": ["./app/shared/constants/*"],  // Alias for shared folder
+      "@helper/*": ["./app/shared/helper/*"],  // Alias for shared folder
+      "@models/*": ["./app/shared/models/*"],  // Alias for shared folder
     }
   },
   "angularCompilerOptions": {

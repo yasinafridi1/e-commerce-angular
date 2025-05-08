@@ -1,1 +1,43 @@
-<p>signup works!</p>
+<app-form-layout title="Sign Up" description="Create a free account" buttonText="Sign Up" text="Already have account ? "
+    linkText="Login here" linkUrl="/auth/signin" [formGroup]="registerForm" (onSubmit)="submitForm()">
+
+
+    <app-text-input label="Full Name" placeholder="Full Name" id="fullName" formControlName="fullName"></app-text-input>
+
+    <app-text-input label="Email" placeholder="Email address" id="email" formControlName="email" type="email">
+
+        <!-- Error Message for Email -->
+        <div *ngIf="f.email.touched && f.email.errors">
+            <app-error-text *ngIf="f.email.errors?.['required']" errorText="Email is requried" />
+            <app-error-text *ngIf="f.email.errors?.['pattern']" [errorText]="validationMessages.email" />
+            <app-error-text *ngIf="!f.email.errors?.['pattern'] &&  f.email.errors?.['maxlength']"
+                [errorText]="validationMessages.emailMaxLengthError" />
+
+        </div>
+    </app-text-input>
+
+    <app-text-input label="Phone Number" placeholder="Phone number with country code" id="phone"
+        formControlName="phoneNumber"></app-text-input>
+
+    <!-- Password Input Field -->
+    <app-password-input formControlName="password" label="Password" placeholder="Password" id="password"
+        name="password">
+
+        <!-- Error Message for Password -->
+        <div *ngIf="f.password.touched && f.password.errors">
+            <app-error-text *ngIf="f.password.errors?.['required']" errorText="Password is requried" />
+            <app-error-text *ngIf="f.password.errors?.['pattern']"
+                [errorText]="validationMessages.passwordPatternError" />
+            <app-error-text *ngIf="!f.password.errors?.['pattern'] &&  f.password.errors?.['maxlength']"
+                [errorText]="validationMessages.passwordMaxLengthError" />
+
+            <app-error-text *ngIf="!f.password.errors?.['pattern'] &&  f.password.errors?.['minlength']"
+                [errorText]="validationMessages.passwordMinLengthError" />
+
+        </div>
+    </app-password-input>
+
+
+    <app-select-box label="Gender" id="gender" [options]="genderOptions" formControlName="gender">
+    </app-select-box>
+</app-form-layout>

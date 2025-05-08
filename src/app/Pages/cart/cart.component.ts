@@ -5,7 +5,7 @@ import { AlphaSlabComponent } from '../../Components/typograpghy/alpha-slab/alph
 import { ButtonPrimaryComponent } from '../../Components/button-primary/button-primary.component';
 import { NgFor, NgIf } from '@angular/common';
 import { CartService } from 'app/services/cart.service';
-import { CartItem } from '@assets/models';
+import { CartItem } from '@models/index';
 
 @Component({
   selector: 'app-cart',

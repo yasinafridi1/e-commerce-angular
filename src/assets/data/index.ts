@@ -1,4 +1,4 @@
-import { NavItem, ProductItem } from '@assets/models';
+import { NavItem, ProductItem } from '@models/index';
 
 export const navItems: NavItem[] = [
   {

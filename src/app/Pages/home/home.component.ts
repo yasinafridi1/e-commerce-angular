@@ -5,9 +5,10 @@ import { NgFor } from '@angular/common';
 import { FooterComponent } from '../../Components/footer/footer.component';
 import { ButtonPrimaryComponent } from '../../Components/button-primary/button-primary.component';
 import { AlphaSlabComponent } from '../../Components/typograpghy/alpha-slab/alpha-slab.component';
-import { ProductItem } from '@assets/models';
 import { products } from '@assets/data';
 import { CartService } from 'app/services/cart.service';
+import { RouterModule, RouterLink } from '@angular/router';
+import { ProductItem } from '@models/index';
 
 @Component({
   selector: 'app-home',
@@ -18,6 +19,8 @@ import { CartService } from 'app/services/cart.service';
     FooterComponent,
     ButtonPrimaryComponent,
     AlphaSlabComponent,
+    RouterModule,
+    RouterLink,
   ],
   standalone: true,
   templateUrl: './home.component.html',

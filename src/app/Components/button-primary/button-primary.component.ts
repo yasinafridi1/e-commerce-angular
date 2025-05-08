@@ -8,4 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ButtonPrimaryComponent {
   @Input() btnText: string = '';
+  @Input() type: string = 'button';
+
+  constructor() {}
 }

@@ -1,0 +1,6 @@
+<div class="flex justify-start items-start flex-col mt-4 w-full">
+    <label [for]="id" class="mb-1 poppins-500 text-sm text-gray-700">{{label}}</label>
+    <input [type]="type" [value]="value" (input)="onInput($event)" (blur)="onTouched()" [id]="id"
+        [placeholder]="placeholder" class="w-full px-2 py-2 rounded-md border focus:outline-none">
+    <ng-content></ng-content>
+</div>

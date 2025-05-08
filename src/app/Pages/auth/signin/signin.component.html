@@ -1,1 +1,38 @@
-<p>signin works!</p>
+<app-form-layout [formGroup]="loginForm" (onSubmit)="onSubmit()" title="Sign In" description="Welcome Back !"
+    buttonText="Sign In" text="Don't have account ? " linkText="Sign Up here" linkUrl="/auth/signup">
+
+    <!-- Email Input Field -->
+    <app-text-input label="Email" placeholder="Email address" id="email" formControlName="email" type="email">
+
+        <!-- Error Message for Email -->
+        <div *ngIf="f.email.touched && f.email.errors">
+            <app-error-text *ngIf="f.email.errors?.['required']" errorText="Email is requried" />
+            <app-error-text *ngIf="f.email.errors?.['pattern']" [errorText]="validationMessages.email" />
+            <app-error-text *ngIf="!f.email.errors?.['pattern'] &&  f.email.errors?.['maxlength']"
+                [errorText]="validationMessages.emailMaxLengthError" />
+
+        </div>
+    </app-text-input>
+
+    <!-- Password Input Field -->
+    <app-password-input formControlName="password" label="Password" placeholder="Password" id="password"
+        name="password">
+
+        <!-- Error Message for Password -->
+        <div *ngIf="f.password.touched && f.password.errors">
+            <app-error-text *ngIf="f.password.errors?.['required']" errorText="Password is requried" />
+            <app-error-text *ngIf="f.password.errors?.['pattern']"
+                [errorText]="validationMessages.passwordPatternError" />
+            <app-error-text *ngIf="!f.password.errors?.['pattern'] &&  f.password.errors?.['maxlength']"
+                [errorText]="validationMessages.passwordMaxLengthError" />
+
+            <app-error-text *ngIf="!f.password.errors?.['pattern'] &&  f.password.errors?.['minlength']"
+                [errorText]="validationMessages.passwordMinLengthError" />
+
+        </div>
+    </app-password-input>
+
+
+
+
+</app-form-layout>
